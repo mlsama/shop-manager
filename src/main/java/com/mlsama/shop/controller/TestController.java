@@ -1,9 +1,8 @@
-package com.mlsama.shopManager.controller;
+package com.mlsama.shop.controller;
 
-import com.mlsama.shopManager.pojo.ElementUiTree;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.mlsama.shop.pojo.ElementUiTree;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +13,12 @@ import java.util.List;
  * 2019/11/7 11:37
  */
 //允许跨域,origins：允许哪些网站跨域访问，默认*，maxAge：准备响应前的缓存持续的最大时间（以秒为单位）默认1800。
-@CrossOrigin(origins = {"http://localhost:8888"},maxAge=100L)
-@RestController
+@CrossOrigin(origins = {"http://localhost:8888"},maxAge=60L)
+@Controller()
 public class TestController {
 
     @GetMapping("/tree")
+    @ResponseBody
     public List<ElementUiTree> getTree(){
         List<ElementUiTree> treeList = new ArrayList<>();
         List<ElementUiTree> childList = new ArrayList<>();
@@ -28,5 +28,10 @@ public class TestController {
         treeList.add(uiTree);
         return treeList;
     }
+    @GetMapping("/")
+    public String index(){
+        return "index";
+    }
+
 
 }

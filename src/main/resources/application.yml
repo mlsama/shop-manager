@@ -1,5 +1,3 @@
-server:
-  port: 8890
 spring:
   datasource:
     username: root
@@ -7,3 +5,7 @@ spring:
     url: jdbc:mysql://10.240.10.128:3306/horse?characterEncoding=UTF-8
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  mvc:
+    view:
+      prefix: /html/
+      suffix: .html

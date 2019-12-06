@@ -1,8 +1,7 @@
-package com.mlsama.shopManager.pojo;
+package com.mlsama.shop.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
