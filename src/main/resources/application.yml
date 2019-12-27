@@ -2,10 +2,19 @@ spring:
   datasource:
     username: root
     password: ml
-    url: jdbc:mysql://10.240.10.128:3306/horse?characterEncoding=UTF-8
+    url: jdbc:mysql://10.240.10.128:3306/mlsama?characterEncoding=UTF-8
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
   mvc:
     view:
       prefix: /html/
       suffix: .html
+mybatis:
+  typeAliasesPackage: com.mlsama.shop.pojo
+  mapperLocations: classpath:mybatis/mappers/**/*Mapper.xml
+  configLocation: classpath:mybatis/mybatis-config.xml

@@ -7,7 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer {
+public class Application /*extends SpringBootServletInitializer */{
 
 	public static void main(String[] args) {
 		/** 创建SpringApplication应用对象 */
@@ -17,9 +17,9 @@ public class Application extends SpringBootServletInitializer {
 		/** 运行 */
 		springApplication.run(args);
 	}
-	@Override
+	/*@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		//指定启动类
 		return builder.sources(Application.class);
-	}
+	}*/
 }

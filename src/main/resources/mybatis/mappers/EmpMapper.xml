@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--名称空间:接口全路径-->
+<mapper namespace="com.mlsama.shop.mapper.EmpMapper">
+    <update id="update" parameterType="int">
+        UPDATE emp set deptNo=#{deptNo} where eId=#{eId}
+    </update>
+    <!--接口方法,id为方法名称-->
+    <select id="insert" parameterType="com.mlsama.shop.pojo.Emp">
+        INSERT INTO emp(eId,eName,eSal) VALUES (
+          #{eId},#{eName},#{eSal}
+        )
+    </select>
+</mapper>
