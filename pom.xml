@@ -13,8 +13,8 @@
 	<groupId>com.mlsama</groupId>
 	<artifactId>shop-manager</artifactId>
 	<version>1.0.0</version>
-	<!--<packaging>war</packaging>-->
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
+	<!--<packaging>jar</packaging>-->
 	<description>商场后台管理系统</description>
 
 	<properties>
@@ -48,7 +48,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<!--<scope>provided</scope>-->
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
