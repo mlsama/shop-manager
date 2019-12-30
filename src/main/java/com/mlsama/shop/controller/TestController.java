@@ -22,9 +22,9 @@ public class TestController {
     public List<ElementUiTree> getTree(){
         List<ElementUiTree> treeList = new ArrayList<>();
         List<ElementUiTree> childList = new ArrayList<>();
-        ElementUiTree childrenTree = new ElementUiTree("mlsama-service-1",null);
+        ElementUiTree childrenTree = new ElementUiTree("mlsama-service",null);
         childList.add(childrenTree);
-        ElementUiTree uiTree = new ElementUiTree("ml-service-1",childList);
+        ElementUiTree uiTree = new ElementUiTree("ml-service",childList);
         treeList.add(uiTree);
         return treeList;
     }
