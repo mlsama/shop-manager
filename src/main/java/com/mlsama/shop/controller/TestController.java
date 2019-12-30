@@ -28,7 +28,6 @@ public class TestController {
         treeList.add(uiTree);
         return treeList;
     }
-
     /**
      * 首页跳转,如果部署在Tomcat,启动后会自动打开浏览器
      * @return
