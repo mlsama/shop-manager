@@ -16,6 +16,7 @@ import java.util.List;
 //@CrossOrigin(origins = {"http://localhost:8888"},maxAge=60L)
 @Controller
 public class TestController {
+
     @GetMapping("/tree")
     @ResponseBody
     public List<ElementUiTree> getTree(){
