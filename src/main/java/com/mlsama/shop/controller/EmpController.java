@@ -48,11 +48,11 @@ public class EmpController {
         try {
             empService.insert(new Emp(8, "mlsama", new BigDecimal(888888888)));
             empService.update(2,6);
-            return "插入成功";
+            return "插入数据成功";
         }catch (Exception e){
             //手动回滚
             TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
-            return "插入失败";
+            return "插入数据失败"+e.getMessage();
         }
 
     }
