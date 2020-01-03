@@ -12,8 +12,9 @@ spring:
       enabled: true  #设置开启热部署
   mvc:
     view:
-      prefix: /html/
+      prefix: /static/html/
       suffix: .html
+    #static-path-pattern: /static/** #放行静态资源
 mybatis:
   typeAliasesPackage: com.mlsama.shop.pojo
   mapperLocations: classpath:mybatis/mappers/**/*Mapper.xml

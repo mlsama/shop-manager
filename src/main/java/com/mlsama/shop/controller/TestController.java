@@ -1,6 +1,7 @@
 package com.mlsama.shop.controller;
 
 import com.mlsama.shop.pojo.ElementUiTree;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,7 @@ import java.util.List;
 //允许跨域,origins：允许哪些网站跨域访问，默认*，maxAge：准备响应前的缓存持续的最大时间（以秒为单位）默认1800。
 //@CrossOrigin(origins = {"http://localhost:8888"},maxAge=60L)
 @Controller
+@Slf4j
 public class TestController {
 
     @GetMapping("/tree")
@@ -32,9 +34,15 @@ public class TestController {
      * 首页跳转,如果部署在Tomcat,启动后会自动打开浏览器
      * @return
      */
-    @GetMapping("/")
+    @RequestMapping("/")
     public String index(){
+        log.info("进入TestController的index方法");
         return "index";
+    }
+    @RequestMapping("/login")
+    public String test(){
+        log.info("进入TestController的test方法");
+        return "login";
     }
 
 

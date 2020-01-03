@@ -22,7 +22,7 @@ public class ExceptionAspect {
     /**
      * 定义切入点，切入点为com.example.aop下的所有函数
      */
-    @Pointcut("execution(public * com.mlsama.shop.controller.*.*(..))")
+    @Pointcut("execution(public * com.mlsama.shop.service.*.*(..))")
     public void cutPoint(){}
 
     @Around("cutPoint()")

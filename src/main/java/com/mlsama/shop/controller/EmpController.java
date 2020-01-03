@@ -30,13 +30,13 @@ public class EmpController {
      * 这是由 Spring AOP 的本质决定的。如果你在 protected、private 或者默认可见性的方法上使用 @Transactional 注解，这将被忽略，也不会抛出任何异常。
      * @Transactional 一般作用在最外层(如controller层)的方法上,因为这些方法会调用多个service的多个方法,在这个方法上设置事务即可保证这些方法执行的一致性
      *      try...catch处理异常,不会回滚
-     *      try...catch,再在catch中抛出异常,回滚,如果还有切面切到这个方法,切面中try...catch,不会滚
+     *      try...catch,再在catch中抛出异常,回滚
      *      TransactionAspectSupport.currentTransactionStatus().setRollbackOnly(); 手动回滚
      *      只有发生RuntimeException时才会回滚,手动回滚任何异常都有效.
      * 总结:
      *      @Transactional 所在的方法不能对抛出来的异常进行捕抓处理,否则无法回滚,但是可以在下层进行捕抓处理
      *      默认只对发生RuntimeException回滚,可以手动指定回滚的异常(rollbackFor)
-     *      TransactionAspectSupport.currentTransactionStatus().setRollbackOnly(); 在catch块手动回滚,与异常无关
+     *      TransactionAspectSupport.currentTransactionStatus().setRollbackOnly(); 在catch块手动回滚,与异常类型无关
      *
      *
      * @return
