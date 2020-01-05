@@ -16,28 +16,28 @@ public class InterceptsManager implements WebMvcConfigurer {
 
     @Resource
     private LoginIntercept loginIntercept;
-    @Override
+   /* @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index.html").setViewName("index");
         registry.addViewController("/login.html").setViewName("login");
-    }
+    }*/
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginIntercept)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/login","/","/login.html","/index.html");
+                .excludePathPatterns("/login","/","/html/**","/js/**","css/**","/images/**","/error");
     }
 
     /**
      * 放行静态资源
      * @param registry
      */
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    /*public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**")
                 .addResourceLocations("classpath:/static/**");
     }
-
+*/
 
     /*private static final String VIEW_PREFIX = "/html/";// 视图前缀
     private static final String VIEW_SUFFIX = ".html";// 视图后缀

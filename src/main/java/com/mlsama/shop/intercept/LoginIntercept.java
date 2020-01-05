@@ -20,6 +20,10 @@ public class LoginIntercept implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         StringBuffer requestURL = request.getRequestURL();
         log.info("进入拦截器!请求URL:{}", requestURL);
+        if (requestURL.toString().contains("order")){
+            response.sendRedirect("/login");
+            return false;
+        }
         return true;
     }
 

@@ -36,13 +36,18 @@ public class TestController {
      */
     @RequestMapping("/")
     public String index(){
-        log.info("进入TestController的index方法");
+        log.info("进入TestController的index方法111");
+        int i = 1/0;
         return "index";
     }
     @RequestMapping("/login")
-    public String test(){
-        log.info("进入TestController的test方法");
+    public String login(){
+        log.info("进入TestController的login方法");
         return "login";
+    }
+    @RequestMapping("/order")
+    public void order(){
+        log.info("进入TestController的order方法,没有登陆跳转到登陆页面。");
     }
 
 
