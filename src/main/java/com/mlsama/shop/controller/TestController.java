@@ -31,15 +31,15 @@ public class TestController {
         return treeList;
     }
     /**
-     * 首页跳转,如果部署在Tomcat,启动后会自动打开浏览器
+     * 首页跳转,如果资源根目录(resources)下有index.html或者在配置视图路径下有index.html,启动后会自动打开浏览器访问.
      * @return
      */
-    @RequestMapping("/")
+   /* @RequestMapping("/")
     public String index(){
         log.info("进入TestController的index方法111");
-        int i = 1/0;
+        //int i = 1/0;
         return "index";
-    }
+    }*/
     @RequestMapping("/login")
     public String login(){
         log.info("进入TestController的login方法");

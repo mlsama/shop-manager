@@ -21,6 +21,7 @@ public class LoginIntercept implements HandlerInterceptor {
         StringBuffer requestURL = request.getRequestURL();
         log.info("进入拦截器!请求URL:{}", requestURL);
         if (requestURL.toString().contains("order")){
+            //重定向
             response.sendRedirect("/login");
             return false;
         }
