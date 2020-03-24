@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 public class InterceptsManager implements WebMvcConfigurer {
 
     @Resource
-    private LoginIntercept loginIntercept;
+    private LoginIntercept loginIntercept; //注入拦截器
 
     /**
      * 添加拦截器
@@ -23,9 +23,9 @@ public class InterceptsManager implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(loginIntercept)
-                .addPathPatterns("/**")
-                .excludePathPatterns("/login","/","/html/**","/js/**","css/**","/images/**","/error");
+        registry.addInterceptor(loginIntercept) //添加拦截器
+                .addPathPatterns("/**") //拦截地址,/**代表拦截所有请求
+                //不拦截的请求,需要放行静态资源,静态资源一般在static下
+                .excludePathPatterns("/login","/","/html/**","/js/**","css/**","/images/**","/error/**");
     }
-
 }

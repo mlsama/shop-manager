@@ -95,8 +95,6 @@
 	</dependencies>
 	<!--打包-->
 	<build>
-		<defaultGoal>compile</defaultGoal>
-		<sourceDirectory>src</sourceDirectory>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>

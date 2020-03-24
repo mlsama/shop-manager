@@ -17,20 +17,15 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class LoginIntercept implements HandlerInterceptor {
 
+    @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         StringBuffer requestURL = request.getRequestURL();
         log.info("进入拦截器!请求URL:{}", requestURL);
-        if (requestURL.toString().contains("order")){
+        if (request.getSession().getAttribute("token") == null){
             //重定向
             response.sendRedirect("/login");
             return false;
         }
         return true;
-    }
-
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-    }
-
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
     }
 }
